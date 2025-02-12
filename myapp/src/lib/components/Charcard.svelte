@@ -1,17 +1,18 @@
 <script>
     export let id;
+    export let icon;
+    export let rank;
+    export let baseType;
+    export let damageType;
     export let kr;
-    export let rarity;
-    export let type;
-    export let path;
 </script>
 
 <div class="charCard">
-    <img class="charImg"src="headerIcon/{id}.png" alt={id} />
+    <img class="charImg"src="headerIcon/{icon}.png" alt={icon} />
     <h2>{kr}</h2>
     <div class="icons">
-        <img class="combatTypeIcon"src="type/{type}.png" alt={type}>
-        <img class="pathIcon"src="path/{path}.png" alt={path}>
+        <img class="combatTypeIcon"src="type/{damageType}.png" alt={damageType}>
+        <img class="pathIcon"src="path/{baseType}.png" alt={baseType}>
     </div>
 </div>
 
