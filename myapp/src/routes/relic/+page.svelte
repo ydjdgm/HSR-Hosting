@@ -4,9 +4,8 @@
 </script>
 <Navbar />
 <Frame>
-	<h1>DDuDDa</h1>
-	<a href="https://hsr18.hakush.in/">Hakush.in</a>
-	<a href="https://wiki.hoyolab.com/pc/hsr/home">HoYoWiKi</a>
+	<h1>Relic</h1>
+	<a href="https://wiki.hoyolab.com/pc/hsr/aggregate/108">HoYoWiKi/relic</a>
 </Frame>
 
 
