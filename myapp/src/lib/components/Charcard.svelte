@@ -8,11 +8,11 @@
 </script>
 
 <div class="charCard">
-    <img class="charImg"src="headerIcon/{icon}.png" alt={icon} />
+    <img class="charImg"src={icon} alt={icon} />
     <h2>{kr}</h2>
     <div class="icons">
-        <img class="combatTypeIcon"src="type/{damageType}.png" alt={damageType}>
-        <img class="pathIcon"src="path/{baseType}.png" alt={baseType}>
+        <img class="combatTypeIcon"src="{damageType}" alt={damageType}>
+        <img class="pathIcon"src={baseType} alt={baseType}>
     </div>
 </div>
 
