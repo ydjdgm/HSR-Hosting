@@ -1,38 +1,46 @@
-export interface CharacterData {
+export interface ApiResponse {
+    retcode: number;
+    message: string;
+    data: CharacterData;
+  }
+  
+  interface CharacterData {
+    list: Character[];
+    total: string;
+  }
+  
+  interface Character {
     entry_page_id: string;
     name: string;
     icon_url: string;
-    display_field: {
-        attr_level_1: CharacterAttributes;
-        attr_level_80: CharacterAttributes;
-    };
-    filter_values: {
-        character_rarity: CharacterFilter;
-        character_combat_type: CharacterFilter;
-        character_factions: CharacterFilter;
-        character_paths: CharacterFilter;
-    };
+    display_field: DisplayField;
+    filter_values: FilterValues;
     desc: string;
-}
-
-interface CharacterAttributes {
-    base_hp: string;
-    base_atk: string;
-    base_def: string;
-    base_speed: string;
-    dynamic: Record<string, unknown>; // 빈 객체를 받을 수 있음
-}
-
-interface CharacterFilter {
+  }
+  
+  interface DisplayField {
+    attr_level_1: string;
+    attr_level_80?: string;
+  }
+  
+  interface FilterValues {
+    character_factions?: FilterCategory;
+    character_paths?: FilterCategory;
+    character_rarity?: FilterCategory;
+    character_combat_type?: FilterCategory;
+  }
+  
+  interface FilterCategory {
     values: string[];
-    value_types: CharacterFilterType[];
+    value_types: FilterValueType[];
     key: string | null;
-}
-
-interface CharacterFilterType {
+  }
+  
+  interface FilterValueType {
     id: string;
     value: string;
     mi18n_key: string;
     icon: string;
     enum_string: string;
-}
+  }
+  
