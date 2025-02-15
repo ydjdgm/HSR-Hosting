@@ -22,6 +22,10 @@
                 <img src="https://wiki.hoyolab.com/_nuxt/img/level_star.7cc9f11.png" alt=rarityNum>
             {/each}
         </div>
+        <div class = keyword_container>
+            <slot></slot>
+            testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+        </div>
     </div>
     <img class="path" src={character_paths_icon} alt="path">
 </div>
@@ -47,7 +51,7 @@
         margin-left: 15px;
         width: 100%;
     }.info div{
-        margin-top: -25px;
+        margin-top: 0px;
     }
     .charCard .name{
         text-align: left;
@@ -72,4 +76,17 @@
         right: 0;
         top: 10%;
     }
+    .keyword_container{
+        /* background: rgb(255, 0, 0); */
+        display: flex;
+        gap: 5px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }.keyword_container::-webkit-scrollbar {
+		height: 10px;
+	}.keyword_container::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #1a1a2e;
+	}
 </style>
