@@ -16,6 +16,7 @@
 		<li class="menuEle {$isOpen ? '' : 'collapsedMenuEle'}"><a href="/char"><button class="eleABtn"><img class="eleABtnImg" src="/navbar/char.png" alt="char"><h1 class="eleABtnH1 {$isOpen ? '' : 'collapsedEleABtnH1'}">Character</h1></button></a></li>
 		<li class="menuEle {$isOpen ? '' : 'collapsedMenuEle'}"><a href="/lightcone"><button class="eleABtn"><img class="eleABtnImg" src="/navbar/lightcone.png" alt="lightcone"><h1 class="eleABtnH1 {$isOpen ? '' : 'collapsedEleABtnH1'}">Lightcone</h1></button></a></li>
 		<li class="menuEle {$isOpen ? '' : 'collapsedMenuEle'}"><a href="/relic"><button class="eleABtn"><img class="eleABtnImg" src="/navbar/relic.png" alt="relic"><h1 class="eleABtnH1 {$isOpen ? '' : 'collapsedEleABtnH1'}">Relic</h1></button></a></li>
+		<li class="menuEle {$isOpen ? '' : 'collapsedMenuEle'}"><a href="/search"><button class="eleABtn"><img class="eleABtnImg" src="/navbar/search.png" alt="search"><h1 class="eleABtnH1 {$isOpen ? '' : 'collapsedEleABtnH1'}">Search</h1></button></a></li>
 	</ul>
 </div>
 

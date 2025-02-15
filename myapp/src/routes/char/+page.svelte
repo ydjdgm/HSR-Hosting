@@ -3,10 +3,9 @@
 	import Frame from "$lib/components/Frame.svelte";
 	import Charcard from "$lib/components/Charcard.svelte";
 	import { onMount } from "svelte";
-	import type { ApiResponse } from "$lib/types";
+	import type { ApiResponse, CharacterData, Character } from "$lib/types";
 
-	let res_json: ApiResponse = { retcode:0, message:"ok", data: { list: [], total: "65" } };
-	let res_icon_json: ApiResponse = { retcode:0, message:"ok", data: { list: [], total: "65" } };
+	let res_json_data_list: Character[] = [];
 
 	onMount(async () => {
 		try {
@@ -19,8 +18,8 @@
 				throw new Error(`Failed to fetch: ${res.status}`);
 			}
 			console.log("api call success");
-			res_json = await res.json();
-			console.log("characters:", res_json.data.list[1]);
+			res_json_data_list = await res.json();
+			console.log("characters:", res_json_data_list[1]);
 		} catch (error) {
 			console.error("Error fetching characters:", error);
 		}
@@ -30,9 +29,9 @@
 <Navbar />
 <Frame>
 	<h1>Character</h1>
-	{#if res_json.data.list.length > 0}
+	{#if res_json_data_list.length > 0}
 	<ul class="charGrid">
-		{#each Object.entries(res_json.data.list) as [entry_page_id, char]}
+		{#each Object.entries(res_json_data_list) as [entry_page_id, char]}
 			<li>
 				<Charcard
 					{entry_page_id}
@@ -66,7 +65,7 @@
 	}
 	.charGrid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		gap: 20px;
 		padding: 20px;
 	}
