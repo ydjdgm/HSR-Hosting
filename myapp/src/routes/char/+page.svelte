@@ -6,6 +6,7 @@
 	import type { ApiResponse } from "$lib/types";
 
 	let res_json: ApiResponse = { retcode:0, message:"ok", data: { list: [], total: "65" } };
+	let res_icon_json: ApiResponse = { retcode:0, message:"ok", data: { list: [], total: "65" } };
 
 	onMount(async () => {
 		try {
@@ -31,15 +32,15 @@
 	<h1>Character</h1>
 	{#if res_json.data.list.length > 0}
 	<ul class="charGrid">
-		{#each Object.entries(res_json.data.list) as [id, char]}
+		{#each Object.entries(res_json.data.list) as [entry_page_id, char]}
 			<li>
 				<Charcard
-					{id}
-					icon={char.icon_url}
-					rank={char.filter_values.character_rarity?.values[0]}
-					baseType={char.filter_values.character_paths?.values[0]}
-					damageType={char.filter_values.character_combat_type?.values[0]}
-					kr={char.name}
+					{entry_page_id}
+					icon_url={char.icon_url}
+					character_rarity={char.filter_values.character_rarity?.values[0]}
+					character_paths_icon={char.filter_values.character_paths?.value_types[0].icon}
+					character_combat_type_icon={char.filter_values.character_combat_type?.value_types[0].icon}
+					name={char.name}
 				/>
 			</li>
 		{/each}
@@ -48,7 +49,7 @@
 		<p>Loading...</p>
 	{/if}
 	<a href="https://wiki.hoyolab.com/pc/hsr/aggregate/104"
-		>HoYoWiKi/lightcone</a
+		>HoYoWiKi/char</a
 	>
 </Frame>
 

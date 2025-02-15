@@ -1,18 +1,18 @@
 <script>
-    export let id;
-    export let icon;
-    export let rank;
-    export let baseType;
-    export let damageType;
-    export let kr;
+    export let entry_page_id;
+    export let icon_url;
+    export let character_rarity;
+    export let character_paths_icon;
+    export let character_combat_type_icon;
+    export let name;
 </script>
 
 <div class="charCard">
-    <img class="charImg"src={icon} alt={icon} />
-    <h2>{kr}</h2>
+    <img class="charImg"src={icon_url} alt={icon_url} />
+    <h2>{name}</h2>
     <div class="icons">
-        <img class="combatTypeIcon"src="{damageType}" alt={damageType}>
-        <img class="pathIcon"src={baseType} alt={baseType}>
+        <img class="combatTypeIcon"src="{character_combat_type_icon}" alt={character_combat_type_icon}>
+        <img class="pathIcon"src={character_paths_icon} alt={character_paths_icon}>
     </div>
 </div>
 
