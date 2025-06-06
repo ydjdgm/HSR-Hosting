@@ -1,7 +1,7 @@
 <script>
 	import { is } from 'drizzle-orm';
 	import { isOpen } from '$lib/stores';
-	function toggleNavbar() {
+	function toggleNavbar() {	
 		isOpen.update(value => !value);
 	}
 </script>
